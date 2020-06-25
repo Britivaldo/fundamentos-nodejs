@@ -76,8 +76,6 @@ class TransactionsRepository {
   }
 
   public create({ title, value, type }: CreateTransactionDTO): Transaction {
-    const { income, outcome } = this.getBalance();
-
     const transaction = new Transaction({ title, value, type });
     this.transactions.push(transaction);
 
